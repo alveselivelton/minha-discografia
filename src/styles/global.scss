@@ -1,0 +1,161 @@
+@use "./abstracts/colors" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $white-100;
+}
+
+form {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+
+label span {
+  font-weight: bold;
+  text-align: left;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Lato", sans-serif;
+  color: $dark-200;
+  font-size: 1.4rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: 1px solid $dark-200;
+  padding: 1.3rem 0;
+  background-color: $white-100;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+.navbar-btn {
+  text-decoration: none;
+  color: $dark-600;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark-200;
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 1.4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+p {
+  color: $dark-700;
+}
+
+img {
+  box-shadow: 2px 2px 10px 0.5px rgba(0, 0, 0, 0.4);
+}
+.navbar-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+}
+
+.btn,
+.error {
+  display: block;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $cyan-500;
+  border: none;
+  width: 100%;
+  color: $white-100;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $cyan-600;
+  }
+
+  &-small {
+    display: flex;
+    max-width: 18rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    &:hover {
+      color: $white-100;
+    }
+  }
+
+  &-danger {
+    background-color: $red-500;
+
+    &:hover {
+      background-color: $red-600;
+    }
+  }
+}
+
+.error {
+  color: $red-900;
+  background-color: $red-200;
+  border: 1px solid $red-300;
+}
+
+.container {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

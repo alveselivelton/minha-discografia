@@ -1,0 +1,11 @@
+@use "../../styles//abstracts/colors" as *;
+
+.about {
+  width: 60rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+}

@@ -1,0 +1,19 @@
+@use "../../styles//abstracts/mixins" as *;
+
+.dashboard {
+  @include center;
+  width: 60rem;
+
+  .no_posts {
+    display: flex;
+    flex-direction: column;
+
+    p:nth-child(1) {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  p:nth-child(1) {
+    margin-bottom: 4rem;
+  }
+}

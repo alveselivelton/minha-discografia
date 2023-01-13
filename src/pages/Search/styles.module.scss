@@ -1,0 +1,10 @@
+@use "../../styles//abstracts/mixins" as *;
+
+.search_container {
+  @include center;
+  width: 60rem;
+
+  h2 {
+    margin-bottom: 3.5rem;
+  }
+}

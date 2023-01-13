@@ -1,0 +1,81 @@
+@use "../../styles//abstracts/colors" as *;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+  height: 7rem;
+  padding: 1rem 4rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
+
+  button {
+    font-size: 1.8rem;
+  }
+
+  &_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.hamburguer {
+  display: none;
+  cursor: pointer;
+
+  .bar {
+    display: block;
+    background-color: $dark-900;
+    width: 23px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+
+    .hamburguer {
+      display: block;
+
+      &.actived .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.actived .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      &.actived .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    .navbar_menu {
+      background-color: $white-100;
+      position: absolute;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      padding: 10px 0;
+      margin: 0;
+      gap: 0;
+      border-top: 1px solid $gray-300;
+
+      &.actived {
+        left: 0;
+      }
+
+      .navbar_item {
+        margin: 15px 0;
+      }
+    }
+  }
+}

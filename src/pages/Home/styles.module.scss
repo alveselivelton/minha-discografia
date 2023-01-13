@@ -1,0 +1,38 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.home {
+  @include center;
+  width: 60rem;
+
+  .search_form {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    input {
+      width: 75%;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  }
+
+  .noposts {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    .search_form {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+}

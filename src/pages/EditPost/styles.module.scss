@@ -1,0 +1,10 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.edit_post {
+  @include center;
+
+  .image_preview {
+    width: 100%;
+    margin: 1rem 0 2.4rem;
+  }
+}

@@ -1,0 +1,18 @@
+@use "../../styles//abstracts//colors" as *;
+
+.footer {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $gray-100;
+}
+
+@media (max-width: 768px) {
+  .footer h3 {
+    width: 90%;
+    text-align: center;
+  }
+}

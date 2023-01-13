@@ -1,0 +1,5 @@
+@use "../../styles//abstracts/mixins" as *;
+
+.create_post {
+  @include center;
+}

@@ -1,0 +1,35 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.post_container {
+  @include center;
+  width: 60rem;
+
+  img {
+    width: 100%;
+    margin-top: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  span {
+    font-style: normal;
+  }
+
+  .review {
+    font-style: italic;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

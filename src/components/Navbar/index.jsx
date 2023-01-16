@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthValue } from "../../hooks/useAuthValue";
 import { useLogout } from "../../hooks/useLogout";
+
 import styles from "./styles.module.scss";
 
 const Navbar = () => {

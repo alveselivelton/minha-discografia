@@ -1,37 +1,43 @@
 @use "../../styles//abstracts/colors" as *;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.8rem;
-  height: 7rem;
-  padding: 1rem 4rem;
+header {
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
 
-  button {
-    font-size: 1.8rem;
-  }
-
-  &_menu {
+  .navbar {
+    max-width: 120rem;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    font-size: 1.8rem;
+    height: 7rem;
+    padding: 1rem 4rem;
+
+    button {
+      font-size: 1.8rem;
+    }
+
+    &_menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
   }
-}
 
-.hamburguer {
-  display: none;
-  cursor: pointer;
+  .hamburguer {
+    display: none;
+    cursor: pointer;
 
-  .bar {
-    display: block;
-    background-color: $dark-900;
-    width: 23px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s;
+    .bar {
+      display: block;
+      background-color: $dark-900;
+      width: 23px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s;
+    }
   }
 }
 

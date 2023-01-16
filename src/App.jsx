@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./services/firebaseConfig";
 
-// pages
+import { AuthContextProvider } from "./context/AuthContext";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Search from "./pages/Search";
@@ -14,13 +15,9 @@ import EditPost from "./pages/EditPost";
 import CreatePost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
 
-// components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
-
-// context
-import { AuthContextProvider } from "./context/AuthContext";
 
 import "./styles/global.scss";
 

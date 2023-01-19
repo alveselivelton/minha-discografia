@@ -13,8 +13,13 @@ export const useGetDocuments = (docCollection, search = null, uid = null) => {
   const [documents, setDocuments] = useState("");
   const { setLoading } = useAuthValue();
 
+  // cleanup
+  const [cancelled, setCancelled] = useState(false);
+
   useEffect(() => {
     const loadData = () => {
+      if (cancelled) return;
+
       setLoading(true);
 
       const collectionRef = collection(db, docCollection);
@@ -56,7 +61,11 @@ export const useGetDocuments = (docCollection, search = null, uid = null) => {
     };
 
     loadData();
-  }, [docCollection, search, uid]);
+  }, [docCollection, search, uid, cancelled]);
+
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
 
   return { documents };
 };

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../services/firebaseConfig";
 import { useAuthValue } from "../hooks/useAuthValue";
@@ -5,7 +6,16 @@ import { useAuthValue } from "../hooks/useAuthValue";
 export const useCreateUser = () => {
   const { setError, setLoading } = useAuthValue();
 
+  // cleanup
+  const [cancelled, setCancelled] = useState(false);
+
+  const checkIfCancelled = () => {
+    if (cancelled) return;
+  };
+
   const createUser = async (data) => {
+    checkIfCancelled();
+
     setLoading(true);
     setError(null);
 
@@ -39,6 +49,10 @@ export const useCreateUser = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
 
   return {
     createUser,

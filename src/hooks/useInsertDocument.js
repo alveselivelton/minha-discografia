@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "../services/firebaseConfig";
 import { useAuthValue } from "../hooks/useAuthValue";
@@ -5,7 +6,16 @@ import { useAuthValue } from "../hooks/useAuthValue";
 export const useInsertDocument = (docCollection) => {
   const { setLoading, setError } = useAuthValue();
 
+  // cleanup
+  const [cancelled, setCancelled] = useState(false);
+
+  const checkIfCancelled = () => {
+    if (cancelled) return;
+  };
+
   const insertDocument = async (document) => {
+    checkIfCancelled();
+
     setLoading(true);
     setError(null);
 
@@ -20,6 +30,10 @@ export const useInsertDocument = (docCollection) => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
 
   return { insertDocument };
 };

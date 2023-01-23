@@ -20,7 +20,6 @@ export const useLogin = () => {
     setError(null);
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      setLoading(false);
     } catch (error) {
       let systemErrorMessage;
 
@@ -33,6 +32,7 @@ export const useLogin = () => {
       }
 
       setError(systemErrorMessage);
+    } finally {
       setLoading(false);
     }
   };

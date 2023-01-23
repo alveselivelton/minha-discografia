@@ -29,8 +29,6 @@ export const useCreateUser = () => {
       await updateProfile(user, {
         displayName: data.displayName,
       });
-
-      setLoading(false);
     } catch (error) {
       console.log(error.message);
       console.log(typeof error.message);
@@ -46,6 +44,7 @@ export const useCreateUser = () => {
       }
 
       setError(systemErrorMessage);
+    } finally {
       setLoading(false);
     }
   };

@@ -21,11 +21,9 @@ export const useUpdateDocument = (docCollection) => {
     try {
       const docRef = doc(db, docCollection, id);
       await updateDoc(docRef, data);
-
-      setLoading(false);
     } catch (error) {
       console.log(error.message);
-
+    } finally {
       setLoading(false);
     }
   };

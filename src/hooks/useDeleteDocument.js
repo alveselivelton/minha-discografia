@@ -20,11 +20,9 @@ export const useDeleteDocument = (docCollection) => {
 
     try {
       await deleteDoc(doc(db, docCollection, id));
-
-      setLoading(false);
     } catch (error) {
       console.log(error.message);
-
+    } finally {
       setLoading(false);
     }
   };

@@ -23,10 +23,9 @@ export const useInsertDocument = (docCollection) => {
       const newDocument = { ...document, createdAt: Timestamp.now() };
 
       await addDoc(collection(db, docCollection), newDocument);
-
-      setLoading(false);
     } catch (error) {
       setError(error);
+    } finally {
       setLoading(false);
     }
   };

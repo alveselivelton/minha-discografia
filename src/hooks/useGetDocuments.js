@@ -51,11 +51,9 @@ export const useGetDocuments = (docCollection, search = null, uid = null) => {
             }))
           );
         });
-
-        setLoading(false);
       } catch (error) {
         console.log(error.message);
-
+      } finally {
         setLoading(false);
       }
     };
